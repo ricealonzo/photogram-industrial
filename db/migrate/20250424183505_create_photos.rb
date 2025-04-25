@@ -7,7 +7,7 @@ class CreatePhotos < ActiveRecord::Migration[8.0]
       t.text :caption , default: 0
       t.references :owner, null: false, foreign_key: { to_table: :users }
       # ...
-ind
+
       t.timestamps
     end
   end
