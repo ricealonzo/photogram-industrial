@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  root "photos#index"
+  get "/users/:id" => "users#show", as: :user
+end
 
   resources :likes
   resources :follow_requests
   resources :comments
   resources :photos
   devise_for :users
+  get "/:username" => "users#show", as: :user
 
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -18,5 +22,4 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-   root "photos#index"
-end
+  # Defines the root path route ("/") -
