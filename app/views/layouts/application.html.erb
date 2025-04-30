@@ -25,7 +25,13 @@
   </head>
 
   <body>
-  
+  HEllo
+  <div class="container">
+  <%= render partial: "shared/navbar" %>
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
   <div class="container">
   <%= render partial: "shared/navbar" %>
     <p class="notice"><%= notice %></p>
