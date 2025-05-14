@@ -57,6 +57,7 @@ group :development do
 end
 
 # Additional gems for AppDev 2
+gem "active_support"
 gem "active_link_to"
 gem "awesome_print"
 gem "dotenv"
