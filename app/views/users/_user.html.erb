@@ -63,7 +63,7 @@
             } do %>
 
           <span class="font-weight-bold">
-            <%= user.pending.size %>
+            <%= user.pending_sent_follow_requests.count %>
           </span>
 
           pending
@@ -74,9 +74,9 @@
 
     <div class="row mb-3">
       <div class="col">
-        <% follow_request = current_user.pending_received_follow_requests.find_by(sender: @user) %>
+        <%# follow_request = current_user.pending_received_follow_requests.find_by(sender: @user) %>
 
-        <% if follow_request %>
+        <% if false #follow_request  %>
           <p class="lead text-center">
             <%= @user.username %> has sent you a follow request.
           </p>
@@ -126,7 +126,7 @@
     </p>
 
     <p>
-      <%= only_host_and_path(user.website) %>
+      <%#= only_host_and_path(user.website) %>
     </p>
   </div>
 </div>
@@ -138,7 +138,7 @@
     description: "followers",
     target: "#{dom_id(user)}_followers"
 %>
-
+<!---->
 <%=
   render "users/connected_users_modal",
     user: user,
@@ -147,10 +147,11 @@
     target: "#{dom_id(user)}_following"
 %>
 
-<%=
+<%#=
   render "users/connected_users_modal",
     user: user,
     connected_users: user.pending,
     description: "pending",
     target: "#{dom_id(user)}_pending"
 %>
+<!---->

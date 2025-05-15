@@ -39,6 +39,8 @@ class User < ApplicationRecord
          has_many :sent_follow_requests, foreign_key: :sender_id, class_name: "FollowRequest"
          
          has_many :accepted_sent_follow_requests, -> { where(status: "accepted") }, foreign_key: :sender_id, class_name: "FollowRequest"
+
+         has_many :pending_sent_follow_requests, -> { where(status: "pending") }, foreign_key: :sender_id, class_name: "FollowRequest"
          
          has_many :received_follow_requests, foreign_key: :recipient_id, class_name: "FollowRequest"
          
