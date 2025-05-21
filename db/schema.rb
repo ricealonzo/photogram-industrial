@@ -47,7 +47,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_25_205456) do
     t.string "image"
     t.integer "comments_count"
     t.integer "likes_count", default: 0
-    t.text "caption", default: "0"
+    t.text "caption"
     t.bigint "owner_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
