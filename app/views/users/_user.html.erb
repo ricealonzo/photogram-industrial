@@ -74,9 +74,9 @@
 
     <div class="row mb-3">
       <div class="col">
-        <%# follow_request = current_user.pending_received_follow_requests.find_by(sender: @user) %>
+        <% follow_request = current_user.pending_received_follow_requests.find_by(sender: @user) %>
 
-        <% if false #follow_request  %>
+        <% if  follow_request  %>
           <p class="lead text-center">
             <%= @user.username %> has sent you a follow request.
           </p>
