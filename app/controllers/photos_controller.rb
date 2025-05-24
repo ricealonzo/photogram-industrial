@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: %i[ show edit update destroy ]
 
+  
   # GET /photos or /photos.json
   def index
     @photos = Photo.all
@@ -52,7 +53,7 @@ class PhotosController < ApplicationController
     @photo.destroy!
 
     respond_to do |format|
-      format.html { redirect_to photos_path, status: :see_other, notice: "Photo was successfully destroyed." }
+      format.html { redirect_to user_url(current_user.username), status: :see_other, notice: "Photo was successfully destroyed." }
       format.json { head :no_content }
     end
   end

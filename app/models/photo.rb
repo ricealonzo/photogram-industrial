@@ -3,7 +3,7 @@
 # Table name: photos
 #
 #  id             :bigint           not null, primary key
-#  caption        :text             default("0")
+#  caption        :text
 #  comments_count :integer
 #  image          :string
 #  likes_count    :integer          default(0)
@@ -20,6 +20,7 @@
 #  fk_rails_...  (owner_id => users.id)
 #
 class Photo < ApplicationRecord
+  mount_uploader :image, ImageUploader
   belongs_to :owner, class_name: "User", counter_cache: true
   has_many :comments
   has_many :likes
